@@ -1,3 +1,5 @@
+<h5>{{ quotes[0]?.symbol }}</h5>
+
 <section>
   <table class="table table-bordered table-striped">
     <thead>
@@ -10,26 +12,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>01/01/2021</td>
-        <td>R$ 1,00</td>
-        <td>-</td>
-        <td>-</td>
+      <tr *ngFor="let item of quotes; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ item.date | date : "dd/MM/yyyy" }}</td>
+        <td>{{ item.open }}</td>
+        <td>{{ item.differenceD1 }}</td>
+        <td>{{ item.diffecenceFirstDay }}</td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>02/01/2021</td>
-        <td>R$ 1,10</td>
-        <td>10%</td>
-        <td>10%</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>03/01/2021</td>
-        <td>R$ 1,05</td>
-        <td>-4,54%</td>
-        <td>5%</td>
+      <tr *ngIf="!quotes.length">
+        <td colspan="5" class="text-center">Nenhum registro encontrado.</td>
       </tr>
     </tbody>
   </table>
