@@ -1,10 +1,7 @@
-// const baseURL = 'http://localhost:3000/';
-const baseURL = 'http://zen-api-scheduler.herokuapp.com/';
-
 export const environment = {
   production: false,
   api: {
-    getProfessional: baseURL + 'professional',
-    getCalendar: baseURL + 'calendar',
+    // getPetra4: 'https://query2.finance.yahoo.com/v8/finance/chart/PETR4.SA',
+    getPetra4: 'http://localhost:3001/',
   },
 };
