@@ -5,9 +5,10 @@ import { PanelComponent } from './components/panel/panel.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AssetRoutingModule } from './asset-routing.module';
 import { NgChartsModule } from 'ng2-charts';
+import { ChartComponent } from './componentes/chart/chart.component';
 
 @NgModule({
-  declarations: [AssetComponent, PanelComponent],
+  declarations: [AssetComponent, PanelComponent, ChartComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,
