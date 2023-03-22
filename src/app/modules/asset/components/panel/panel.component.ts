@@ -9,6 +9,7 @@ import { faChartSimple, faChartLine } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./panel.component.scss'],
 })
 export class PanelComponent implements OnInit {
+  public symbol: string = '';
   public quotes: YahooResponse[] = [];
   public isLoading: boolean = false;
   public tabChart: boolean = false;
@@ -37,6 +38,8 @@ export class PanelComponent implements OnInit {
   }
 
   handleData(data: YahooResponse[]) {
+    this.symbol = data[0].symbol;
+
     // ordena
     data.reverse();
 
