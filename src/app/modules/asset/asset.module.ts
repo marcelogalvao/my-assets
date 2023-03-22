@@ -7,9 +7,15 @@ import { AssetRoutingModule } from './asset-routing.module';
 import { NgChartsModule } from 'ng2-charts';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ChartComponent } from './components/chart/chart.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
-  declarations: [AssetComponent, PanelComponent, ChartComponent],
+  declarations: [
+    AssetComponent,
+    PanelComponent,
+    ChartComponent,
+    TableComponent,
+  ],
   imports: [
     CommonModule,
     FontAwesomeModule,

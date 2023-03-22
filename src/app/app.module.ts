@@ -4,10 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TableComponent } from './modules/asset/components/table/table.component';
 
 @NgModule({
-  declarations: [AppComponent, TableComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
