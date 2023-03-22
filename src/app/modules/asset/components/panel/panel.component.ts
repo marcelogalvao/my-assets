@@ -28,6 +28,7 @@ export class PanelComponent implements OnInit {
   }
 
   handleData(data: YahooResponse[]) {
+    // ordena
     data.reverse();
 
     // primeiro dia
@@ -36,9 +37,8 @@ export class PanelComponent implements OnInit {
     for (let index = 0; index < data.length; index++) {
       const item = data[index];
 
+      // caso nao possua valor
       if (item.open === null) continue;
-      // data
-      // formattedData.date = new Date(formattedData.timestamp);
 
       // valor
       item.open = parseFloat(item.open).toFixed(2);
