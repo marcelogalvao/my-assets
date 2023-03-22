@@ -10,7 +10,7 @@ This project was built in Angular version 15.0.4.
 
 ## Local Development
 
-Run `npm start` and navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Make sure you've already run `npm install`. Run `npm start` and navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Production Build
 
