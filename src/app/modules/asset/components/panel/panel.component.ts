@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { YahooResponse } from '../../models/yahoo.interface';
 import { YahooService } from '../../services/yahoo.service';
+import { faChartSimple, faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-panel',
@@ -10,6 +11,9 @@ import { YahooService } from '../../services/yahoo.service';
 export class PanelComponent implements OnInit {
   public quotes: YahooResponse[] = [];
   public isLoading: boolean = false;
+  public tabChart: boolean = false;
+  public faChartSimple = faChartSimple;
+  public faChartLine = faChartLine;
 
   constructor(private yahooService: YahooService) {}
 
@@ -60,5 +64,9 @@ export class PanelComponent implements OnInit {
     }
 
     return data;
+  }
+
+  public showChart(value: boolean) {
+    this.tabChart = value;
   }
 }

@@ -1,6 +1,23 @@
 <h5>{{ quotes[0]?.symbol }}</h5>
 
-<section>
+<nav class="text-end mb-2">
+  <button
+    class="btn btn-outline-primary me-1"
+    [ngClass]="{ active: !tabChart }"
+    (click)="showChart(false)"
+    title="Lista">
+    <fa-icon [icon]="faChartSimple"></fa-icon>
+  </button>
+  <button
+    class="btn btn-outline-primary"
+    [ngClass]="{ active: tabChart }"
+    (click)="showChart(true)"
+    title="Gráfico">
+    <fa-icon [icon]="faChartLine"></fa-icon>
+  </button>
+</nav>
+
+<section *ngIf="!tabChart">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -26,6 +43,8 @@
   </table>
 </section>
 
-<app-chart [quotes]="quotes"></app-chart>
+<section *ngIf="tabChart">
+  <app-chart [quotes]="quotes"></app-chart>
+</section>
 
 <app-loader *ngIf="isLoading"></app-loader>
