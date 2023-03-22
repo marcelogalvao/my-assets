@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AssetRoutingModule } from './asset-routing.module';
 import { NgChartsModule } from 'ng2-charts';
 import { ChartComponent } from './components/chart/chart.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [AssetComponent, PanelComponent, ChartComponent],
@@ -14,6 +15,7 @@ import { ChartComponent } from './components/chart/chart.component';
     FontAwesomeModule,
     AssetRoutingModule,
     NgChartsModule,
+    SharedModule,
   ],
 })
 export class AssetModule {}

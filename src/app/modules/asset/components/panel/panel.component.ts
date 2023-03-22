@@ -9,6 +9,7 @@ import { YahooService } from '../../services/yahoo.service';
 })
 export class PanelComponent implements OnInit {
   public quotes: YahooResponse[] = [];
+  public isLoading: boolean = false;
 
   constructor(private yahooService: YahooService) {}
 
@@ -17,11 +18,15 @@ export class PanelComponent implements OnInit {
   }
 
   private getPetra4() {
+    this.isLoading = true;
+
     this.yahooService.getPetra4().subscribe(
       (res: YahooResponse[]) => {
         this.quotes = this.handleData(res);
+        this.isLoading = false;
       },
       (error) => {
+        this.isLoading = false;
         this.quotes = [];
       }
     );
