@@ -1,0 +1,23 @@
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Dia</th>
+      <th scope="col">Data</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Variação em relaçào a D-1</th>
+      <th scope="col">Variação em relação a primeira data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of quotes; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ item.date | date : "dd/MM/yyyy" }}</td>
+      <td>{{ item.open }}</td>
+      <td>{{ item.differenceD1 }}</td>
+      <td>{{ item.diffecenceFirstDay }}</td>
+    </tr>
+    <tr *ngIf="!quotes.length">
+      <td colspan="5" class="text-center">Nenhum registro encontrado.</td>
+    </tr>
+  </tbody>
+</table>
